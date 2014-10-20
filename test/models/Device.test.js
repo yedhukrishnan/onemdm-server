@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-describe.only('DeviceModel', function() {
+describe('DeviceModel', function() {
   
   describe('Device', function() {
 

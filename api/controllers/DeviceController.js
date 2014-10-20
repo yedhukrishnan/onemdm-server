@@ -6,24 +6,24 @@
  */
 
 module.exports = {
-	
-
-
-  /**
-   * `DeviceController.create()`
-   */
+  
   create: function (req, res) {
-    Device.create(req.query).exec(function(error, device) {
+    Device.create(req.body).exec(function(error, device) {
       if(error) {
-        return res.json({
-          error: 'Error creating the device'
-        });
+        return res.badRequest('Invalid device details');
       }
       return res.json({
         device: device.name
       });
     });
-    
+  },
+
+  index: function(req, res) {
+    Device.find().then(function(devices) {
+      return res.json(devices);
+    });
   }
-};
+  
+}
+
 
