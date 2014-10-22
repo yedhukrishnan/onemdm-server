@@ -14,7 +14,7 @@ before_script:
   - psql -c 'create database one_mdm_dev;' -U postgres
 
 test:
-  adapter: postgresql
+  adapter: sails-postgresql
   database: one_mdm_dev
   username: postgres
   
