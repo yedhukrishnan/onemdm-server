@@ -12,7 +12,7 @@ deploy:
 before_script:
   - psql -c 'create database one_mdm_dev;' -U postgres
 
-development:
+test:
   adapter: postgresServerDevFlash
   database: one_mdm_dev
   username: postgres
