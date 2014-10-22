@@ -5,8 +5,8 @@ node_js:
 - '0.8'
 - '0.6'
 deploy:
+  provider: heroku
   api_key:
-    provider: heroku
     secure: iqee+YIQ6HnmhJ/JohgiTnvoDcN+k/YSToQlJh1qOexQutoKo0v8vYcASvp6iPVXhn1F4QTd9ZmykxdkxDVHcePEqPqHm/zVFAjTu3Fls+v3TypK+Nj+8jKe8UYK41Balk8cfqTMLBwNrkg8cYkfsZgqx9/maUp6EAuLaXZab+Y=
 
 before_script:
