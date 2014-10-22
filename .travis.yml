@@ -13,7 +13,7 @@ before_script:
   - psql -c 'create database one_mdm_dev;' -U postgres
 
 test:
-  adapter: postgresServerDevFlash
+  adapter: postgresql
   database: one_mdm_dev
   username: postgres
   
