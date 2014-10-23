@@ -19,8 +19,8 @@ module.exports = {
   },
 
   index: function(req, res) {
-    Device.find().then(function(devices) {
-      return res.json(devices);
+    Device.find().paginate({ page: req.query.page, limit: 10 }).then(function(devices) {
+      res.view('api/device/index', { devices: devices, count: devices.length, page: 10, layout: 'layout' });
     });
   }
   
