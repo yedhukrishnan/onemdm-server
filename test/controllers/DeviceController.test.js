@@ -35,7 +35,7 @@ describe('DeviceController', function() {
       request(sails.hooks.http.app)
         .get('/device/index')
         .expect(200)
-        .expect('Content-Type', /json/)
+        .expect('Content-Type', /html/)
         .end(function(err, res) {
           done();
         })
