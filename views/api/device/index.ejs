@@ -6,14 +6,16 @@
 
   <table class="table table-hover table-bordered">
     <thead>
-      <th><%= Object.keys(devices[0])[1] %></th>
-      <th><%= Object.keys(devices[0])[0] %></th>
+      <th>Device ID</th>
+      <th>Device Name</th>
+      <th>Created On</th>    
     </thead>
     <tbody>
       <% for(var i = 0; i < devices.length; i++) { %>
         <tr>
           <td><%= devices[i].id %></td>
           <td><%= devices[i].name %></td>
+          <td><%= devices[i].createdAt.toDateString() %></td>
         </tr>
       <% } %>
     </tbody>
