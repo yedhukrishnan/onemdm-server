@@ -22,19 +22,19 @@ module.exports = {
     Device.find()
       .paginate({ page: req.query.page, limit: 10 })
       .then(function(devices) {
-        var currentPage = parseInt(req.query.page);
-        var previousPage =  (currentPage - 1) || 1;
-        var nextPage = (currentPage + 1) || 2;
-
-        Device.find()
-          .sort('id desc')
-          .then(function(deviceList) {
-            if(deviceList[0].id == devices[devices.length - 1].id) {
-              res.view('api/device/index', { devices: devices, previousPage: previousPage, nextPage: currentPage, layout: 'layout' }); 
-            } else {
-              res.view('api/device/index', { devices: devices, previousPage: previousPage, nextPage: nextPage, layout: 'layout' });
-            }
-          });
+        Device.count(function(error, deviceCount) {
+          var pageCount = Math.ceil(deviceCount / 10);
+          var currentPage = parseInt(req.query.page) || 1;
+          var previousButtonClass = currentPage <= 1  ? "disabled" : ""; 
+          var nextButtonClass = currentPage >= pageCount ? "disabled" : "";
+          res.view('api/device/index', { 
+            devices: devices, 
+            currentPage: currentPage,
+            previousButtonClass: previousButtonClass,
+            nextButtonClass: nextButtonClass,
+            layout: 'layout'
+          });           
+        });
       });
   }
 }
