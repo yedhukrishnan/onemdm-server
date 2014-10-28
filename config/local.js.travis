@@ -89,6 +89,13 @@ module.exports = {
        user: 'postgres',
        password: 'postgres',
        database: 'one_mdm_dev',
+     },
+     postgresTestDB: {
+       adapter: 'sails-postgresql',
+       host: 'localhost',
+       user: 'postgres',
+       password: 'postgres',
+       database: 'one_mdm_test'
      }
    }
 

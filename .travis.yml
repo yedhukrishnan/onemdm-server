@@ -10,6 +10,7 @@ deploy:
 before_script:
   - cp config/local.js.travis config/local.js
   - psql -c 'create database one_mdm_dev;' -U postgres
+  - psql -c 'create database one_mdm_test;' -U postgres
 test:
   adapter: sails-postgresql
   database: one_mdm_dev
