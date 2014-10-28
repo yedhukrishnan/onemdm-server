@@ -5,9 +5,11 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
+var extend = require('util')._extend;
+
 module.exports = {
   
-  create: function (req, res) {
+  create: function(req, res) {
     Device.create(req.body).exec(function(error, device) {
       if(error) {
         return res.badRequest('Invalid device details');
@@ -26,15 +28,13 @@ module.exports = {
         Device.count(function(error, deviceCount) {
           var pageCount = Math.ceil(deviceCount / 10);
           var currentPage = parseInt(req.query.page) || 1;
-          var previousButtonClass = currentPage <= 1  ? "disabled" : ""; 
-          var nextButtonClass = currentPage >= pageCount ? "disabled" : "";
-          res.view('api/device/index', { 
+          var buttonClasses = DeviceHelper.pagerButtonClasses(currentPage, pageCount);
+          var data = extend({ 
             devices: devices, 
             currentPage: currentPage,
-            previousButtonClass: previousButtonClass,
-            nextButtonClass: nextButtonClass,
             layout: 'layout'
-          });           
+          }, buttonClasses);
+          res.view('api/device/index', data);           
         });
       });
   }
