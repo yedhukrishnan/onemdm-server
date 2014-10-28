@@ -13,6 +13,7 @@ module.exports = {
         return res.badRequest('Invalid device details');
       }
       return res.json({
+        id: device.id,
         device: device.id + '#' + device.name
       });
     });
