@@ -9,8 +9,13 @@ module.exports = {
 
   attributes: {
     device: {
-      model: 'device'
+      model: 'device',
+      required: true
     }
+  },
+
+  afterCreate: function(heartbeat, callBack) {
+    Device.updateLastSeen(heartbeat.device, heartbeat.createdAt, callBack);
   }
 
 };

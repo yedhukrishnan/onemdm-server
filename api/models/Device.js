@@ -8,14 +8,27 @@
 module.exports = {
 
   attributes: {
-    name : {
+    name: {
       type: 'string',
       required: true
+    },
+    lastSeen: {
+      type: 'datetime'
     },
     heartbeats: {
       collection: 'heartbeat',
       via: 'device'
     }
+  },
+
+  updateLastSeen: function(deviceID, lastSeen, callBack) {
+    Device.findOne(deviceID)
+    .then(function(device) {
+      device.lastSeen = lastSeen;
+      device.save(function(error) {
+        callBack(error);
+      });
+    });
   }
 };
 

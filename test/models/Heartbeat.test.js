@@ -11,19 +11,44 @@ describe('HeartbeatModel', function() {
       });
     });
 
+    it('should not create a new heartbeat when device ID is not present', function(done) {
+      Heartbeat.create({ invalid: 'invalid' }, function(error, heartbeat) {
+        assert.notEqual(error, undefined);
+        assert.equal(heartbeat, undefined);
+        done();
+      });
+    });
+
     it('should belong to a device', function(done) {
       Device.create({ name: 'TestDevice' }, function(error, device) {
         Heartbeat.create({ device: device.id }, function(error, heartbeat) {
-          Device.findById(device.id)
+          Device.findOne(device.id)
             .populate('heartbeats')
-            .exec(function(error, devices) {
-              assert.equal(heartbeat.id, devices[0].heartbeats[0].id);
+            .then(function(currentDevice) {
+              assert.equal(heartbeat.id, currentDevice.heartbeats[0].id);
               done();
             });
         });
       });
     });
 
+    describe('after creating', function() {
+      
+      it('should update the last seen of the device', function(done) {
+        Device.create({ name: 'TestDevice' }, function(error, device) {
+          Heartbeat.create({ device: device.id }, function(error, heartbeat) {
+            Device.findOne(device.id)
+              .then(function(currentDevice) {
+                assert.equal(currentDevice.lastSeen.toString(), heartbeat.createdAt.toString());
+                done();
+              });
+          });
+        });
+      });
+      
+    });
+    
   });
 
 });
+

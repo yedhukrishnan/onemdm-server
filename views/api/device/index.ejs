@@ -8,6 +8,7 @@
     <thead>
       <th>Device ID</th>
       <th>Device Name</th>
+      <th>Last Seen</th>
       <th>Created On</th>    
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <tr>
           <td><%= devices[i].id %></td>
           <td><%= devices[i].name %></td>
+          <td><%= devices[i].lastSeen %></td>
           <td><%= devices[i].createdAt.toDateString() %></td>
         </tr>
       <% } %>

@@ -11,7 +11,7 @@ describe('DeviceModel', function() {
       });
     });
 
-    it('should not create a new device if name is invalid', function (done) {
+    it('should not create a new device when name is not present', function (done) {
       Device.create({name: null}, function(error, result) {
         assert.notEqual(error, undefined);
         assert.equal(result, undefined);
