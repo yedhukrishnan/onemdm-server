@@ -34,10 +34,8 @@ module.exports = {
             currentPage: currentPage,
             layout: 'layout'
           }, buttonClasses);
-          res.view('api/device/index', data);           
+          res.view('device/index', data);           
         });
       });
   }
 }
-
-

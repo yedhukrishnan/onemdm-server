@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 module.exports = {
 
   pagerButtonClasses: function(currentPage, pageCount) {
@@ -7,6 +9,13 @@ module.exports = {
       previousButtonClass: previousButtonClass,
       nextButtonClass: nextButtonClass
     }
+  },
+
+  readableTimeDifference: function(time) {
+    if(time) {
+      return moment(time).fromNow();
+    }
+    return "Not available";
   }
 
 }
