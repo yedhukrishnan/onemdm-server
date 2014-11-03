@@ -1,0 +1,36 @@
+<div class="page-heading">
+  <h2>Scripts</h2>      
+</div>  
+
+<% if(scripts.length) { %>
+
+  <table class="table table-hover table-bordered">
+    <thead>
+      <th>Script ID</th>
+      <th>Script Name</th>
+      <th>Status</th>
+      <th>Created On</th>    
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < scripts.length; i++) { %>
+        <tr>
+          <td><%= scripts[i].id %></td>
+          <td><%= scripts[i].name %></td>
+          <td><%= scripts[i].status %></td>
+          <td><%= scripts[i].createdAt.toDateString() %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <ul class="pager">  
+    <li class="previous <%= previousButtonClass %>"><a href="/script?page=<%= currentPage - 1 %>">&larr; Previous</a></li>
+    <li class="next <%= nextButtonClass %>"><a href="/script?page=<%= currentPage + 1 %>">Next &rarr;</a></li>
+  </ul>
+
+<% } else { %>
+
+  <p class="not-available">No scripts found<p>
+
+<% } %>
+  

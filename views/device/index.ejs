@@ -16,7 +16,7 @@
         <tr>
           <td><%= devices[i].id %></td>
           <td><%= devices[i].name %></td>
-          <td><%= DeviceHelper.readableTimeDifference(devices[i].lastSeen) %></td>
+          <td><%= ViewHelper.readableTimeDifference(devices[i].lastSeen) %></td>
           <td><%= devices[i].createdAt.toDateString() %></td>
         </tr>
       <% } %>

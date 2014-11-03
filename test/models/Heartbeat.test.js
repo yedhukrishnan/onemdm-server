@@ -4,14 +4,14 @@ describe('HeartbeatModel', function() {
 
   describe('Heartbeat', function() {
     
-    it('should create a new heartbeat', function(done) {
+    it('creates a new heartbeat', function(done) {
       Heartbeat.create({ device: 1 }, function(error, heartbeat) {
         assert.equal(heartbeat.device, 1);
         done();
       });
     });
 
-    it('should not create a new heartbeat when device ID is not present', function(done) {
+    it('does not create a new heartbeat when device ID is not present', function(done) {
       Heartbeat.create({ invalid: 'invalid' }, function(error, heartbeat) {
         assert.notEqual(error, undefined);
         assert.equal(heartbeat, undefined);
@@ -19,7 +19,7 @@ describe('HeartbeatModel', function() {
       });
     });
 
-    it('should belong to a device', function(done) {
+    it('belongs to a device', function(done) {
       Device.create({ name: 'TestDevice' }, function(error, device) {
         Heartbeat.create({ device: device.id }, function(error, heartbeat) {
           Device.findOne(device.id)
@@ -34,7 +34,7 @@ describe('HeartbeatModel', function() {
 
     describe('after creating', function() {
       
-      it('should update the last seen of the device', function(done) {
+      it('updates the last seen of the device', function(done) {
         Device.create({ name: 'TestDevice' }, function(error, device) {
           Heartbeat.create({ device: device.id }, function(error, heartbeat) {
             Device.findOne(device.id)

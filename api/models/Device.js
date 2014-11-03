@@ -18,6 +18,10 @@ module.exports = {
     heartbeats: {
       collection: 'heartbeat',
       via: 'device'
+    },
+    scripts: {
+      collection: 'script',
+      via: 'device'
     }
   },
 

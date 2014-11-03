@@ -5,7 +5,7 @@ describe('HeartbeatController', function() {
 
   describe('#create()', function(done) {
 
-    it('should respond 200 OK with device ID when a heartbeat is received', function(done) {
+    it('responds 200 OK with device ID when a heartbeat is received', function(done) {
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
         .send({ device: 1 })
@@ -17,7 +17,7 @@ describe('HeartbeatController', function() {
         });
     });
 
-    it('should respond 400 Bad Request when an invalid heartbeat is received', function(done) {
+    it('responds 400 Bad Request when an invalid heartbeat is received', function(done) {
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
         .send({ invalid: 'invalid' })

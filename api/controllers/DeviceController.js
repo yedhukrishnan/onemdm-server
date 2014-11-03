@@ -28,8 +28,8 @@ module.exports = {
         Device.count(function(error, deviceCount) {
           var pageCount = Math.ceil(deviceCount / 10);
           var currentPage = parseInt(req.query.page) || 1;
-          var buttonClasses = DeviceHelper.pagerButtonClasses(currentPage, pageCount);
-          var data = extend({ 
+          var buttonClasses = ViewHelper.pagerButtonClasses(currentPage, pageCount);
+          var data = extend({
             devices: devices, 
             currentPage: currentPage,
             layout: 'layout'
