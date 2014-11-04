@@ -44,7 +44,7 @@ module.exports = {
       status: 'pending'
     }).then(function(script) {
       if(script) {
-        script.status = 'delivered';
+        script.status = 'Delivered';
         script.save();
       }
       return res.json({ script: script });

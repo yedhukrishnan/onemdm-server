@@ -7,9 +7,9 @@ describe('ScriptModel', function() {
     it('creates a new script', function(done) {
       Script.create({ device: 1 }, function(error, script) {
         assert.equal(script.device, 1);
-        assert.equal(script.name, 'Check Script');
+        assert.equal(script.name, 'Disk Check');
         assert.equal(script.content, 'df');
-        assert.equal(script.status, 'pending');
+        assert.equal(script.status, 'Pending');
         done();
       });
     });

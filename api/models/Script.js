@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     name: { 
       type: 'string',
-      defaultsTo: 'Check Script'
+      defaultsTo: 'Disk Check'
     },
     content: { 
       type: 'string',
@@ -22,7 +22,7 @@ module.exports = {
     },
     status: {
       type: 'string',
-      defaultsTo: 'pending'
+      defaultsTo: 'Pending'
     }
   }
 
