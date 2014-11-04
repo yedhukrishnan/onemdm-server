@@ -1,3 +1,12 @@
+<% var message = req.flash('message'); %>
+<% if(message.length) { %>
+
+  <div class="flash-message alert alert-success">
+    <span><%= message %></span>
+  </div>
+
+<% } %>
+
 <div class="page-heading">
   <h2>Scripts</h2>      
 </div>  

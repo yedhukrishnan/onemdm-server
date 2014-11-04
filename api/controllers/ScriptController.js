@@ -11,12 +11,8 @@ module.exports = {
   create: function(req, res) {
     Script.create(req.body)
       .exec(function(error, script) {
-        if(error) {
-          return res.json({});
-        }
-        return res.json({
-          device: script.device
-        });
+        req.flash('message', 'Script execution initiated');
+        res.redirect("/script");
       });
   },
 

@@ -9,9 +9,8 @@ describe('ScriptController', function() {
       request(sails.hooks.http.app)
         .post('/script/create')
         .send({ device: 1 })
-        .expect(200)
+        .expect('location', '/script')
         .end(function(err, res) {
-          assert(res.body.device, 1);
           if(err) return done(err);
           done();
         });
