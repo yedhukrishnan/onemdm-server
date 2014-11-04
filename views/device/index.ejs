@@ -9,7 +9,7 @@
       <th>Device Name</th>
       <th>Last Seen</th>
       <th>Created On</th>    
-      <th>Scripts</th>
+      <th>Actions</th>
     </thead>
     <tbody>
       <% for(var i = 0; i < devices.length; i++) { %>
@@ -21,7 +21,7 @@
           <td>
             <form action="/script/create" method="post" accept-charset="utf-8">
               <input type="text" name="device" class="hidden-field" value=<%= devices[i].id %> />
-              <input type="submit" class="submit-link" value="Check Disk Space" />
+              <input type="submit" class="submit-link btn btn-sm btn-info" value="Check Disk Space" />
             </form>     
           </td>
         </tr>

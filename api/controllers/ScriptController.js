@@ -18,6 +18,7 @@ module.exports = {
 
   index: function(req, res) {
     Script.find()
+      .populate('device')
       .sort('createdAt desc')
       .paginate({ page: req.query.page, limit: 10 })
       .then(function(scripts) {

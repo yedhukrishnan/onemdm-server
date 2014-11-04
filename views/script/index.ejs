@@ -17,6 +17,7 @@
     <thead>
       <th>Script ID</th>
       <th>Script Name</th>
+      <th>Device Name</th>
       <th>Status</th>
       <th>Created On</th>    
     </thead>
@@ -25,6 +26,7 @@
         <tr>
           <td><%= scripts[i].id %></td>
           <td><%= scripts[i].name %></td>
+          <td><%= scripts[i].device.name %></td>
           <td><%= scripts[i].status %></td>
           <td><%= scripts[i].createdAt.toDateString() %></td>
         </tr>
