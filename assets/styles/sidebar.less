@@ -1,16 +1,53 @@
+.left-side {
+  -webkit-box-shadow: inset -13px 0px 30px -15px rgba(214,211,214,1);
+  -moz-box-shadow: inset -13px 0px 30px -15px rgba(214,211,214,1);
+  box-shadow: inset -13px 0px 30px -15px rgba(214,211,214,1);
+}
 .sidebar {
-  .sidebar-links {
-    margin-top: 80px;
-  }
-  .button-link {
-    border-top: 1px solid #fff;
+
+  .welcome-box {
+    height: 85px;
+    padding-top: 33px;
+    padding-left: 15px;
     border-bottom: 1px solid #dbdbdb;
-    height: 45px;   
-    margin-bottom: 0px; 
+    
+    .welcome-logo {
+      background-image: url('user.png');
+    }
+
+    .welcome-text {
+      display: inline;
+      margin-left: 1px;
+      font-weight: bold;
+    }
+
   }
-  .list-group-item {
-    border-right-style: none;
-    background-color: transparent;
-    border-left-style: none;
+
+  .sidebar-links {
+  
+    .link-icon {
+      position: absolute;
+      margin-left: 5px;
+      opacity: 0.4;
+    }
+
+    .link-text {
+      margin-left: 35px;
+    }
+
+    .button-link {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #dbdbdb;
+      height: 45px;   
+      margin-bottom: 0px; 
+    }
+
+    .list-group-item {
+      border-right-style: none;
+      background-color: transparent;
+      border-left-style: none;
+    }
+
   }
+
 }
