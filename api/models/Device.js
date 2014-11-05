@@ -34,13 +34,13 @@ module.exports = {
       });
     });
   },
-
+  
   status: function(deviceID, callBack) {
     Device.findOne(deviceID)
       .then(function(device) {
         var deviceStatuses = { 0: 'online', 1: 'seemsOffline', default: 'offline' };
         var currentDate = new Date();
-        var timeDifferenceInHours = new Date(currentDate - device.lastSeen).getHours();
+        var timeDifferenceInHours = parseInt((currentDate - device.lastSeen) / (1 * 1000 * 60 * 60));
         var status = deviceStatuses[timeDifferenceInHours] || deviceStatuses['default'];
         callBack(status);
       });

@@ -23,6 +23,7 @@ module.exports = {
 
   index: function(req, res) {
     Device.find()
+      .sort('lastSeen desc')
       .paginate({ page: req.query.page, limit: 10 })
       .then(function(devices) {
         Device.count(function(error, deviceCount) {
