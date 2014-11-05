@@ -33,6 +33,17 @@ module.exports = {
         callBack(error);
       });
     });
+  },
+
+  status: function(deviceID, callBack) {
+    Device.findOne(deviceID)
+      .then(function(device) {
+        var deviceStatuses = { 0: 'online', 1: 'seemsOffline', default: 'offline' };
+        var currentDate = new Date();
+        var timeDifferenceInHours = new Date(currentDate - device.lastSeen).getHours();
+        var status = deviceStatuses[timeDifferenceInHours] || deviceStatuses['default'];
+        callBack(status);
+      });
   }
 };
 
