@@ -11,6 +11,8 @@ module.exports = {
   create: function(req, res) {
     Script.create(req.body)
       .exec(function(error, script) {
+        console.log("Created script:");
+        console.log(script);
         req.flash('message', 'Script execution initiated');
         res.redirect("/script");
       });
@@ -37,8 +39,15 @@ module.exports = {
       });
   },
 
+  show: function(req, res) {
+    Script.findOne(req.query.id)
+      .populate('device')
+      .then(function(script) {
+        res.view('script/show', {script: script});
+      });
+  },
+
   executable: function(req, res) {
-    console.log(req.query);
     Script.findOne({
       device: req.query.device,
       status: 'Pending'

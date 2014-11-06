@@ -1,0 +1,42 @@
+<div class="page-heading">
+  <h2>Script Details</h2>      
+</div>  
+
+<% if(script) { %>
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Device Name<td>
+      <td><%= script.device.name %><td>
+    </tr>
+    <tr>
+      <td>Script Name<td>
+      <td><%= script.name %><td>
+    </tr>
+    <tr>
+      <td>Script ID<td>
+      <td><%= script.id %><td>
+    </tr>
+    <tr>
+      <td>Status<td>
+      <td><%= script.status %><td>
+    </tr>
+    <tr>
+      <td>Output<td>
+      <td>
+        <% if(script.output) { %>
+          <pre class="code"><%= script.output %></pre>
+        <% } else { %>
+          No Output
+        <% } %>
+      <td>
+    </tr>
+  <tbody>
+</table>
+
+<% } else { %>
+
+  <p class="not-available">Script is not available<p>
+
+<% } %>

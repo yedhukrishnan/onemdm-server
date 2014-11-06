@@ -20,6 +20,7 @@
       <th>Device Name</th>
       <th>Status</th>
       <th>Created On</th>    
+      <th>Actions</th>
     </thead>
     <tbody>
       <% for(var i = 0; i < scripts.length; i++) { %>
@@ -29,6 +30,9 @@
           <td><%= scripts[i].device.name %></td>
           <td><%= scripts[i].status %></td>
           <td><%= scripts[i].createdAt.toDateString() %></td>
+          <td>
+            <a href="/script/show?id=<%= scripts[i].id %>" class="submit-link btn btn-sm btn-info">View Output</a>
+          </td>
         </tr>
       <% } %>
     </tbody>

@@ -23,6 +23,9 @@ module.exports = {
     status: {
       type: 'string',
       defaultsTo: 'Pending'
+    },
+    output: {
+      type: 'text'      
     }
   }
 
