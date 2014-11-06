@@ -41,7 +41,7 @@ module.exports = {
     console.log(req.query);
     Script.findOne({
       device: req.query.device,
-      status: 'pending'
+      status: 'Pending'
     }).then(function(script) {
       if(script) {
         script.status = 'Delivered';
