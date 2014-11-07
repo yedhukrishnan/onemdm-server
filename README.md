@@ -2,4 +2,4 @@
 
 # One MDM
 
-a [Sails](http://sailsjs.org) application
+One MDM is an open source Mobile Device Management (MDM) solution. It can be used to manage Android devices registered to the server after installing the [one-mdm-client](https://github.com/multunus/one-mdm-client) application.
