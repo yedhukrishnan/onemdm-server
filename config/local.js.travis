@@ -96,6 +96,10 @@ module.exports = {
        user: 'postgres',
        password: 'postgres',
        database: 'one_mdm_test'
+     },
+     postgresProductionDB: {
+       adapter: 'sails-postgresql',
+       url: process.env.HEROKU_POSTGRESQL_COBALT_URL
      }
    }
 
