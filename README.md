@@ -9,4 +9,3 @@ One MDM is an open source Mobile Device Management (MDM) solution. It can be use
 ## How to set up One MDM?
 
 In order to use One MDM, you have to host this One MDM server ([Sails JS](http://sailsjs.org/) application). Also the client application to be installed has to be built with necessary configurations to point to this server (Details can be found on the [one-mdm-client](https://github.com/multunus/one-mdm-client) page).
-
