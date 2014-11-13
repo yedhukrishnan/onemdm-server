@@ -24,11 +24,11 @@
     </thead>
     <tbody>
       <% for(var i = 0; i < scripts.length; i++) { %>
-        <tr>
+        <tr id="<%= scripts[i].id %>">
           <td><%= scripts[i].id %></td>
           <td><%= scripts[i].name %></td>
           <td><%= scripts[i].device.name %></td>
-          <td><%= scripts[i].status %></td>
+          <td class="script-status"><%= scripts[i].status %></td>
           <td><%= scripts[i].createdAt.toDateString() %></td>
           <td>
             <a href="/script/show?id=<%= scripts[i].id %>" class="submit-link btn btn-sm btn-info">View Output</a>

@@ -1,14 +1,28 @@
 $(document).ready(function() {
   $("abbr.timeago").timeago(updateLastSeen);
 
+  subscribeToHeartbeatCreation();
+  subscribeToScriptStatusUpdation();
+
+});
+
+var subscribeToHeartbeatCreation = function() {
   io.socket.get('/heartbeat/create');
   io.socket.on('heartbeat', function(event) {
     var device = event.data;
-    var tableID = "#" + device.id;
-    var element = $(tableID).find(".last-seen").find("abbr");
-    element.attr("title", device.lastSeen).data("timeago",null).timeago(updateLastSeen);
+    var rowID = "#" + device.id;
+    var element = $(rowID).find(".last-seen").find("abbr");
+    element.attr("title", device.lastSeen).data("timeago", null).timeago(updateLastSeen);
   });
-});
+};
+
+var subscribeToScriptStatusUpdation = function() {
+  io.socket.get('/script/update');
+  io.socket.on('script', function(event) {
+    var rowID = "#" + event.id;
+    $(rowID).find(".script-status").html(event.data.status);
+  });
+}
 
 var labelClass = function(status) {
   var labelClasses = { 

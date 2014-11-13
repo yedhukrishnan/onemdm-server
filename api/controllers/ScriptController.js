@@ -58,6 +58,30 @@ module.exports = {
       }
       return res.json({ script: script });
     });
+  },
+
+  update: function(req, res) {
+    
+    if(req.isSocket) {
+      console.log("### socket connected");
+      Script.find().then(function(allScripts) {
+        Script.subscribe(req.socket, allScripts);
+      });
+      return res.json({});
+    }
+    
+    Script.update({id: req.params.id}, req.body)
+      .exec(function(err, scripts) {
+        if(err) {
+          return res.json(err);
+        }
+        
+        Script.publishUpdate(scripts[0].id + '', { status: scripts[0].status });
+        
+        return res.json({
+          script: scripts[0]
+        });
+      });
   }
 
 };
