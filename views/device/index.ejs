@@ -13,10 +13,14 @@
     </thead>
     <tbody>
       <% for(var i = 0; i < devices.length; i++) { %>
-        <tr>
+        <tr id="<%= devices[i].id %>">
           <td><%= devices[i].id %></td>
           <td><%= devices[i].name %></td>
-          <td><%- ViewHelper.readableLastSeenTime(devices[i]) %></td>
+          <td class="last-seen">
+            <span data-toggle="tooltip" data-placement="left">
+              <abbr class="timeago" data-toggle="tooltip" title="<%= devices[i].lastSeen ? devices[i].lastSeen.toISOString() : '' %>">Not available</abbr>
+            </span
+          </td>
           <td><%= devices[i].createdAt.toDateString() %></td>
           <td>
             <form action="/script/create" method="post" accept-charset="utf-8">

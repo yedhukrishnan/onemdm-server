@@ -27,6 +27,16 @@ describe('HeartbeatController', function() {
           done();
         });
     });
+
+    it('accepts a socket connection request and publishes a message when heartbeat is created', function(done) {
+      request(sails.hooks.http.app)
+        .post('/heartbeat/create')
+        .set('isSocket', true)
+        .end(function(err, res) {
+                    
+          done();
+        });
+    });
     
   });
 
