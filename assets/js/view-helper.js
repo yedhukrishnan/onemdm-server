@@ -12,7 +12,7 @@ var subscribeToHeartbeatCreation = function() {
     var device = event.data;
     var rowID = "#" + device.id;
     var element = $(rowID).find(".last-seen").find("abbr");
-    element.attr("title", device.lastSeen).data("timeago", null).timeago(updateLastSeen);
+    element.attr("data-title", device.lastSeen).data("timeago", null).timeago(updateLastSeen);
   });
 };
 

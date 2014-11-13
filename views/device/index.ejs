@@ -18,7 +18,7 @@
           <td><%= devices[i].name %></td>
           <td class="last-seen">
             <span data-toggle="tooltip" data-placement="left">
-              <abbr class="timeago" data-toggle="tooltip" title="<%= devices[i].lastSeen ? devices[i].lastSeen.toISOString() : '' %>">Not available</abbr>
+              <abbr class="timeago" data-toggle="tooltip" data-title="<%= devices[i].lastSeen ? devices[i].lastSeen.toISOString() : '' %>">Not available</abbr>
             </span
           </td>
           <td><%= devices[i].createdAt.toDateString() %></td>
