@@ -11,9 +11,7 @@ module.exports = {
   create: function(req, res) {
     Script.create(req.body)
       .exec(function(error, script) {
-        console.log("Created script:");
-        console.log(script);
-        req.flash('message', 'Script execution initiated');
+        req.flash('message', req.__("scripts")["execution-initiated"]);
         res.redirect("/script");
       });
   },
@@ -63,7 +61,6 @@ module.exports = {
   update: function(req, res) {
     
     if(req.isSocket) {
-      console.log("### socket connected");
       Script.find().then(function(allScripts) {
         Script.subscribe(req.socket, allScripts);
       });

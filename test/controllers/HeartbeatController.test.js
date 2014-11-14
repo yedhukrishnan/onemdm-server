@@ -1,5 +1,7 @@
 var request = require('supertest');
 var assert = require('assert');
+var sinon = require('sinon');
+var expect = require('chai').expect;
 
 describe('HeartbeatController', function() {
 
@@ -28,13 +30,17 @@ describe('HeartbeatController', function() {
         });
     });
 
-    it('accepts a socket connection request and publishes a message when heartbeat is created', function(done) {
+    it('publishes a message when a heartbeat is created', function(done) {
+      var publishCreateStub = sinon.stub(Heartbeat, 'publishCreate');
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
-        .set('isSocket', true)
+        .send({ device: 1 })
         .end(function(err, res) {
-                    
-          done();
+          setTimeout(function() {
+            expect(publishCreateStub.callCount).to.equal(1);
+            publishCreateStub.restore();
+            done(); 
+          }, 1000);
         });
     });
     

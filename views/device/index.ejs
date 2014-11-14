@@ -1,15 +1,14 @@
 <div class="page-heading">
-  <h2>Devices</h2>      
+  <h2><%= __("devices")["index"]["page-title"] %></h2>      
 </div>  
 
 <% if(devices.length) { %>
   <table class="table table-hover table-bordered">
     <thead>
-      <th>Device ID</th>
-      <th>Device Name</th>
-      <th>Last Seen</th>
-      <th>Created On</th>    
-      <th>Actions</th>
+      <% titles = __("devices")["index"]["column-titles"].split(", ") %>
+      <% for(var i in titles) { %>
+        <th><%= titles[i] %></th>
+      <% } %>
     </thead>
     <tbody>
       <% for(var i = 0; i < devices.length; i++) { %>
@@ -40,7 +39,7 @@
 
 <% } else { %>
 
-  <p class="not-available">No devices found<p>
+  <p class="not-available"><%= __("devices")["index"]["not-available"] %><p>
 
 <% } %>
   

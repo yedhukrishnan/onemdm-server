@@ -8,19 +8,17 @@
 <% } %>
 
 <div class="page-heading">
-  <h2>Scripts</h2>      
+  <h2><%= __("scripts")["index"]["page-title"] %></h2>      
 </div>  
 
 <% if(scripts.length) { %>
 
   <table class="table table-hover table-bordered">
     <thead>
-      <th>Script ID</th>
-      <th>Script Name</th>
-      <th>Device Name</th>
-      <th>Status</th>
-      <th>Created On</th>    
-      <th>Actions</th>
+      <% titles = __("scripts")["index"]["column-titles"].split(", ") %>
+      <% for(var i in titles) { %>
+        <th><%= titles[i] %></th>
+      <% } %>
     </thead>
     <tbody>
       <% for(var i = 0; i < scripts.length; i++) { %>
@@ -45,7 +43,7 @@
 
 <% } else { %>
 
-  <p class="not-available">No scripts found<p>
+  <p class="not-available"><%= __("not-available") %><p>
 
 <% } %>
   
