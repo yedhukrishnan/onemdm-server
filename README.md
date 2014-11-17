@@ -12,7 +12,7 @@ One MDM is an open source Mobile Device Management (MDM) solution. It can be use
 
 ## How to set up One MDM?
 
-In order to use One MDM, you have to host this One MDM server (Sails JS. For that, the server needs to have Node JS and npm installed in it. In a linux server, you can install them by running the commands:
+In order to use One MDM, you have to host this One MDM server. For that, the server needs to have Node JS and npm installed in it. In a linux server, you can install them by running the commands:
 
 ``` bash
 sudo apt-get update
