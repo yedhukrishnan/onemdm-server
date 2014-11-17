@@ -9,8 +9,8 @@ One MDM is an open source Mobile Device Management (MDM) solution. It can be use
 ![devices](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_devices.png)
 
 ## Documentation & Support 
- * We track issues and bugs in Github
- * Follow @multunus on Twitter for news and updates
+ * We track [issues and bugs](https://github.com/multunus/one-mdm/issues) in Github
+ * Follow [@multunus](https://twitter.com/multunus) on Twitter for news and updates
 
 ## How to set up One MDM?
 
