@@ -6,6 +6,8 @@
 
 One MDM is an open source Mobile Device Management (MDM) solution. It can be used to manage Android devices registered to the server after installing the [one-mdm-client](https://github.com/multunus/one-mdm-client) application. You can see the live demo of the server here: [One MDM Server](http://onemdm.herokuapp.com/)
 
+![devices](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_devices.png)
+
 ## Documentation & Support 
  * We track issues and bugs in Github
  * Follow @multunus on Twitter for news and updates
@@ -33,6 +35,9 @@ Once the application is installed in the android device, it gets registered in t
 One MDM server can be used to do the following:
 
 * **Check the Device Disk Space**: One MDM server can be used to check the free disk space available in the device. Once you click on the `Check Disk Space` button, the server creates a script with command to execute on that device. Once the script is delivered to the device, the device executes the script and sends the status (success or failure) and result back to the server.
+
+![scripts](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_scripts.png)
+![output](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_output.png)
 
 ## How to contribute to One MDM?
 
