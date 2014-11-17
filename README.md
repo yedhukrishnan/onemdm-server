@@ -6,6 +6,10 @@
 
 One MDM is an open source Mobile Device Management (MDM) solution. It can be used to manage Android devices registered to the server after installing the [one-mdm-client](https://github.com/multunus/one-mdm-client) application. You can see the live demo of the server here: [One MDM Server](http://onemdm.herokuapp.com/)
 
+## Documentation & Support 
+ * We track issues and bugs in Github
+ * Follow @multunus on Twitter for news and updates
+
 ## How to set up One MDM?
 
 In order to use One MDM, you have to host this One MDM server (Sails JS. For that, the server needs to have Node JS and npm installed in it. In a linux server, you can install them by running the commands:
