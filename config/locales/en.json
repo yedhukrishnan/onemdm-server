@@ -9,6 +9,19 @@
     }
   },
   "scripts": {
+    "new": {
+      "page-title": "Enter Script",
+      "labels": {
+        "script-name": "Script Name",
+        "script-content": "Command"
+      },
+      "placeholders": {
+        "script-name": "Enter script name",
+        "script-content": "Enter the command to be executed"
+      },
+      "submit-button": "Execute",
+      "required-field": "required field"
+    },
     "index": {
       "page-title": "Scripts",
       "column-titles": "Script ID, Script Name, Device Name, Status, Created On, Actions",

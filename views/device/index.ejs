@@ -24,8 +24,11 @@
           <td>
             <form action="/script/create" method="post" accept-charset="utf-8">
               <input type="text" name="device" class="hidden-field" value=<%= devices[i].id %> />
-              <input type="submit" class="submit-link btn btn-sm btn-info" value="Check Disk Space" />
+              <input type="text" name="name" class="hidden-field" value="Disk Check" />
+              <input type="text" name="content" class="hidden-field" value="df" />
+              <input type="submit" class="btn btn-sm btn-info btn-action" value="Check Disk Space" />
             </form>     
+            <a href="/script/new?device=<%= devices[i].id %>" class="btn btn-sm btn-info btn-action">Run Script</a>
           </td>
         </tr>
       <% } %>

@@ -16,6 +16,10 @@ module.exports = {
       });
   },
 
+  new: function(req, res) {
+    res.view('script/new', { device: req.query.device });
+  },
+
   index: function(req, res) {
     Script.find()
       .populate('device')

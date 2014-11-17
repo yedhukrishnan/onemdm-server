@@ -1,0 +1,24 @@
+<div class="page-heading">
+  <h2><%= __("scripts")["new"]["page-title"] %></h2>      
+</div>  
+
+<div class="create-form">
+  <form role="form" action="create" method="post" accept-charset="utf-8">
+    <input type="text" class="hidden-field" name="device" value="<%= device %>">
+    <div class="form-group required">
+      <label for="name" class="control-label"><%= __("scripts")["new"]["labels"]["script-name"] %></label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="<%= __("scripts")["new"]["placeholders"]["script-name"] %>" required>
+    </div>
+    <div class="form-group required">
+      <label for="content" class="control-label"><%= __("scripts")["new"]["labels"]["script-content"]  %></label>
+      <input type="text" class="form-control" id="content" name="content" placeholder="<%= __("scripts")["new"]["placeholders"]["script-content"] %>" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-default"><%= __("scripts")["new"]["submit-button"] %></button>
+    </div>
+  </form>
+
+  <div class="foot-note">
+    <p><b>*</b> <%= __("scripts")["new"]["required-field"] %></p>
+  </div>
+</div>
