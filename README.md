@@ -41,4 +41,11 @@ One MDM server can be used to do the following:
 
 ## How to contribute to One MDM?
 
-One MDM is still under construction! It is purely an open source project. If you find any bugs, you can help us by raising issues in Github. You can also contribute to the project by sending pull requests.
+One MDM is still under construction! It is purely an open source project. If you find any bugs, you can help us by raising issues in Github. Also, you can contribute to the project by sending pull requests:
+
+* Fork the project on Github
+* Create a topic branch for your changes
+* Ensure that you provide *documentation* and *test coverage* for your changes (patches won't be accepted without)
+* Ensure that all tests pass (`npm test`)
+* Create a pull request on Github 
+
