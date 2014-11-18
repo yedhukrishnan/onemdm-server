@@ -21,10 +21,10 @@ var subscribeToScriptStatusUpdation = function() {
   io.socket.on('script', function(event) {
     var rowID = "#" + event.id;
     $(rowID).find(".script-status").html(event.data.status);
-    $("tr td.script-status").html(event.data.status);
+    $(".script-data tr td.script-status").html(event.data.status);
     if(event.data.output) {
       var output = "<pre>" + event.data.output + "</pre>";
-      $("tr td.script-output").html(output);
+      $(".script-data tr td.script-output").html(output);
     }
   });
 }
