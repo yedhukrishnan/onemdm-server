@@ -17,6 +17,24 @@ describe('ScriptController', function() {
     });
 
   });
+  
+  describe('#update()', function(done) {
+
+    it('updates the script values', function(done) {
+      request(sails.hooks.http.app)
+        .post('/script/1')
+        .send({ status: 'changed' })
+        .end(function(err, res) {
+          Script.findOne(1).then(function(s) {
+            assert.equal(s.status, 'changed');
+          });
+          if(err) return done(err);
+          done();
+        });
+    });
+
+
+  });
 
   
 });

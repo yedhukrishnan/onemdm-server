@@ -1,4 +1,48 @@
 {
-	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+  "app-title": "One MDM Console",
+  "welcome-message": "Welcome, Admin!",
+  "devices": {
+    "index": {
+      "page-title": "Devices",
+      "column-titles": "Device ID, Device Name, Last Seen, Created On, Actions",
+      "not-available": "No devices found"
+    }
+  },
+  "scripts": {
+    "new": {
+      "page-title": "Run Script",
+      "labels": {
+        "script-name": "Script Name",
+        "script-content": "Shell Command"
+      },
+      "placeholders": {
+        "script-name": "Enter script name",
+        "script-content": "Enter the command to be executed"
+      },
+      "submit-button": "Execute",
+      "required-field": "required field",
+      "help-text-title": "The following shell commands are not supported:",
+      "help-text-no-root-commands": "The shell commands which require root permission.",
+      "help-text-no-indefinite-commands": "The shell commands which run indefinitely. (Example: Instead of <i>logcat</i> execute <i>logcat -d</i>)"
+      
+    },
+    "index": {
+      "page-title": "Scripts",
+      "column-titles": "Script ID, Script Name, Device Name, Status, Created On, Actions",
+      "not-available": "No scripts found"
+    },
+    "show": {
+      "page-title": "Script Details",
+      "labels": {
+        "device-name": "Device Name",
+        "script-name": "Script Name",
+        "script-id": "Script ID",
+        "status": "Status",
+        "output": "Output"
+      },
+      "not-available": "Script is not available"
+    },
+    "execution-initiated": "Script execution initiated"
+  }
+  
 }

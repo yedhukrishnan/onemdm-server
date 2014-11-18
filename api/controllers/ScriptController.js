@@ -11,11 +11,13 @@ module.exports = {
   create: function(req, res) {
     Script.create(req.body)
       .exec(function(error, script) {
-        console.log("Created script:");
-        console.log(script);
-        req.flash('message', 'Script execution initiated');
+        req.flash('message', req.__("scripts")["execution-initiated"]);
         res.redirect("/script");
       });
+  },
+
+  new: function(req, res) {
+    res.view('script/new', { device: req.query.device });
   },
 
   index: function(req, res) {
@@ -54,10 +56,37 @@ module.exports = {
     }).then(function(script) {
       if(script) {
         script.status = 'Delivered';
-        script.save();
+        script.save(function(error) {
+          if(!error) {
+            Script.publishUpdate(script.id + '', { status: script.status }); 
+          }
+        });
       }
       return res.json({ script: script });
     });
+  },
+
+  update: function(req, res) {
+    
+    if(req.isSocket) {
+      Script.find().then(function(allScripts) {
+        Script.subscribe(req.socket, allScripts);
+      });
+      return res.json({});
+    }
+    
+    Script.update({id: req.params.id}, req.body)
+      .exec(function(err, scripts) {
+        if(err) {
+          return res.json(err);
+        }
+        
+        Script.publishUpdate(scripts[0].id + '', { status: scripts[0].status, output: scripts[0].output });
+        
+        return res.json({
+          script: scripts[0]
+        });
+      });
   }
 
 };

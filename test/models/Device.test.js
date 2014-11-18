@@ -19,26 +19,6 @@ describe('DeviceModel', function() {
       });
     });
 
-    it('returns the status of the device as online if it has send heartbeat in the past 1 hour', function(done) {
-      Device.create({ name: "MyTestDevice", lastSeen: new Date() }, function(error, device) {
-        Device.status(device.id, function(status) {
-          assert(status, 'online');
-          done();
-        });
-      });
-    });
-
-    it('returns the status of the device as offline if it has not send any heartbeat in past 2 hours', function(done) {
-      var date = new Date();
-      date.setDate(date.getDate() - 1);
-      Device.create({ name: "MyTestDevice", lastSeen: date }, function(error, device) {
-        Device.status(device.id, function(status) {
-          assert(status, 'offline');
-          done();
-        });
-      });
-    });
-    
   });
 
 });

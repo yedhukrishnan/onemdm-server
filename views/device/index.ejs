@@ -1,28 +1,34 @@
 <div class="page-heading">
-  <h2>Devices</h2>      
+  <h2><%= __("devices")["index"]["page-title"] %></h2>      
 </div>  
 
 <% if(devices.length) { %>
   <table class="table table-hover table-bordered">
     <thead>
-      <th>Device ID</th>
-      <th>Device Name</th>
-      <th>Last Seen</th>
-      <th>Created On</th>    
-      <th>Actions</th>
+      <% titles = __("devices")["index"]["column-titles"].split(", ") %>
+      <% for(var i in titles) { %>
+        <th><%= titles[i] %></th>
+      <% } %>
     </thead>
     <tbody>
       <% for(var i = 0; i < devices.length; i++) { %>
-        <tr>
+        <tr id="<%= devices[i].id %>">
           <td><%= devices[i].id %></td>
           <td><%= devices[i].name %></td>
-          <td><%- ViewHelper.readableLastSeenTime(devices[i]) %></td>
+          <td class="last-seen">
+            <span data-toggle="tooltip" data-placement="left">
+              <abbr class="timeago" data-toggle="tooltip" data-title="<%= devices[i].lastSeen ? devices[i].lastSeen.toISOString() : '' %>">Not available</abbr>
+            </span
+          </td>
           <td><%= devices[i].createdAt.toDateString() %></td>
           <td>
             <form action="/script/create" method="post" accept-charset="utf-8">
               <input type="text" name="device" class="hidden-field" value=<%= devices[i].id %> />
-              <input type="submit" class="submit-link btn btn-sm btn-info" value="Check Disk Space" />
+              <input type="text" name="name" class="hidden-field" value="Disk Check" />
+              <input type="text" name="content" class="hidden-field" value="df" />
+              <input type="submit" class="btn btn-sm btn-info btn-action" value="Check Disk Space" />
             </form>     
+            <a href="/script/new?device=<%= devices[i].id %>" class="btn btn-sm btn-info btn-action">Run Script</a>
           </td>
         </tr>
       <% } %>
@@ -36,7 +42,7 @@
 
 <% } else { %>
 
-  <p class="not-available">No devices found<p>
+  <p class="not-available"><%= __("devices")["index"]["not-available"] %><p>
 
 <% } %>
   
