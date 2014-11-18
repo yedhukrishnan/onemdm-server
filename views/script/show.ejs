@@ -20,11 +20,11 @@
     </tr>
     <tr>
       <td><%= __("scripts")["show"]["labels"]["status"] %><td>
-      <td><%= script.status %><td>
+      <td class="script-status"><%= script.status %><td>
     </tr>
     <tr>
       <td><%= __("scripts")["show"]["labels"]["output"] %><td>
-      <td>
+      <td class="script-output">
         <% if(script.output) { %>
           <pre class="code"><%= script.output %></pre>
         <% } else { %>

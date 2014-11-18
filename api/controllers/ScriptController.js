@@ -56,7 +56,11 @@ module.exports = {
     }).then(function(script) {
       if(script) {
         script.status = 'Delivered';
-        script.save();
+        script.save(function(error) {
+          if(!error) {
+            Script.publishUpdate(script.id + '', { status: script.status }); 
+          }
+        });
       }
       return res.json({ script: script });
     });
@@ -77,7 +81,7 @@ module.exports = {
           return res.json(err);
         }
         
-        Script.publishUpdate(scripts[0].id + '', { status: scripts[0].status });
+        Script.publishUpdate(scripts[0].id + '', { status: scripts[0].status, output: scripts[0].output });
         
         return res.json({
           script: scripts[0]
