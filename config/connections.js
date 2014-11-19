@@ -90,7 +90,10 @@ module.exports.connections = {
   ***************************************************************************/
   postgresProductionDB: {
     adapter: 'sails-postgresql',
-    url: process.env.HEROKU_POSTGRESQL_COBALT_URL
+    host: process.env.ONEMDM_DB_HOST,
+    user: process.env.ONEMDM_DB_USER,
+    password: process.env.ONEMDM_DB_PASSWORD,
+    database: process.env.ONEMDM_DB_NAME
   } 
  
 };
