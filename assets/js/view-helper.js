@@ -20,7 +20,7 @@ var subscribeToScriptStatusUpdation = function() {
   io.socket.get('/script/update');
   io.socket.on('script', function(event) {
     var rowID = "#" + event.id;
-    $(rowID).find(".script-status").html(event.data.status);
+    $(rowID).find(".script-status").html(scriptStatus(event.data.status));
     $(".script-data tr td.script-status").html(event.data.status);
     if(event.data.output) {
       var output = "<pre>" + event.data.output + "</pre>";
@@ -57,3 +57,14 @@ var updateLastSeen = function(distance) {
   parentElement.addClass(labelClass(status));
   parentElement.attr("title", toolTipMessage(status));
 };
+
+var scriptStatus = function(status) {
+  var labelClass = { 
+    "Pending": "label label-warning",
+    "Delivered": "label label-info",
+    "Success": "label label-success",
+    "Failed": "label label-danger"
+  };
+  var element = '<span class="' + labelClass[status] + '">' + status + '</span>';
+  return element;
+}
