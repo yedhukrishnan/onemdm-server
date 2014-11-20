@@ -28,7 +28,7 @@ var subscribeToScriptStatusUpdation = function() {
       $(".script-data tr td.script-output").html(output);
     }
   });
-}
+};
 
 var labelClass = function(status) {
   var labelClasses = { 
@@ -68,7 +68,7 @@ var scriptStatus = function(status) {
   };
   var element = '<span class="' + labelClass[status] + '">' + status + '</span>';
   return element;
-}
+};
 
 var updateScriptStatusStyles = function() {
   $.each($(".script-list tr td.script-status"), function(index, element) {
