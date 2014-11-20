@@ -90,14 +90,10 @@ module.exports.connections = {
   ***************************************************************************/
   postgresProductionDB: {
     adapter: 'sails-postgresql',
-    /*
     host: process.env.ONEMDM_DB_HOST,
     user: process.env.ONEMDM_DB_USER,
     password: process.env.ONEMDM_DB_PASSWORD,
     database: process.env.ONEMDM_DB_NAME
-    */
-    ssl: true,
-    url: process.env.PRODUCTION_DB_URL
   } 
  
 };
