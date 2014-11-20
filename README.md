@@ -26,6 +26,8 @@ For alternate installation options, see this link: [How To Install Node.js on an
 
 Alternatively, you can also host the app in Heroku: [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
 
+We are using [sails-db-migrate](https://github.com/building5/sails-db-migrate) for database migrations. Refer the link for instructions.
+
 Also the client application to be installed in the android device has to be built with necessary configurations to point to the server (Configuration details can be found on the [one-mdm-client](https://github.com/multunus/one-mdm-client) page).
 
 Once the application is installed in the android device, it gets registered in the server and starts sending heartbeats.
