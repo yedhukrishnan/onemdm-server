@@ -17,7 +17,7 @@ module.exports = {
   },
 
   new: function(req, res) {
-    res.view('script/new', { device: req.query.device });
+    res.view('script/new', { device: req.query.device, page: req.query.page });
   },
 
   index: function(req, res) {
