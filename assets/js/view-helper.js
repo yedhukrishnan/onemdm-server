@@ -3,7 +3,8 @@ $(document).ready(function() {
 
   subscribeToHeartbeatCreation();
   subscribeToScriptStatusUpdation();
-
+  updateScriptStatusStyles();
+  
 });
 
 var subscribeToHeartbeatCreation = function() {
@@ -68,3 +69,10 @@ var scriptStatus = function(status) {
   var element = '<span class="' + labelClass[status] + '">' + status + '</span>';
   return element;
 }
+
+var updateScriptStatusStyles = function() {
+  $.each($(".script-list tr td.script-status"), function(index, element) {
+    var status = $(element).html();
+    $(element).html(scriptStatus(status));
+  });
+};
