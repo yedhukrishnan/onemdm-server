@@ -14,19 +14,7 @@ One MDM is an open source Mobile Device Management (MDM) solution. It can be use
 
 ## How to set up One MDM?
 
-In order to use One MDM, you have to host this One MDM server. For that, the server needs to have Node JS and npm installed in it. In a linux server, you can install them by running the commands:
-
-``` bash
-sudo apt-get update
-sudo apt-get install nodejs
-sudo apt-get install npm
-```
-
-For alternate installation options, see this link: [How To Install Node.js on an Ubuntu 14.04 server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
-
-Alternatively, you can also host the app in Heroku: [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
-
-We are using [sails-db-migrate](https://github.com/building5/sails-db-migrate) for database migrations. Refer the link for instructions.
+Refer the Wiki for setting up the server: [Deploying One MDM Server](https://github.com/multunus/one-mdm/wiki/Deploying-One-MDM-Server)
 
 Also the client application to be installed in the android device has to be built with necessary configurations to point to the server (Configuration details can be found on the [one-mdm-client](https://github.com/multunus/one-mdm-client) page).
 
