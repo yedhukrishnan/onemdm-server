@@ -7,11 +7,11 @@ describe('HeartbeatController', function() {
 
   describe('#create()', function(done) {
 
-    it('responds 200 OK with device ID when a heartbeat is received', function(done) {
+    it('responds 201 Created with device ID when a heartbeat is received', function(done) {
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
         .send({ device: 1 })
-        .expect(200)
+        .expect(201)
         .end(function(err, res) {
           assert.equal(res.body.device, 1);
           if (err) return done(err);
@@ -19,11 +19,11 @@ describe('HeartbeatController', function() {
         });
     });
 
-    it('responds 400 Bad Request when an invalid heartbeat is received', function(done) {
+    it('responds 422 Unprocessable Entity when an invalid heartbeat is received', function(done) {
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
         .send({ invalid: 'invalid' })
-        .expect(400)
+        .expect(422)
         .end(function(err, res) {
           if (err) return done(err);
           done();

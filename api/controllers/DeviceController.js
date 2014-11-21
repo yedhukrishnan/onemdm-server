@@ -12,8 +12,10 @@ module.exports = {
   create: function(req, res) {
     Device.create(req.body).exec(function(error, device) {
       if(error) {
-        return res.badRequest('Invalid device details');
+        res.status(422);
+        return res.send('Invalid device details');
       }
+      res.status(201);
       return res.json({
         id: device.id,
         device: device.id + '#' + device.name

@@ -4,23 +4,23 @@ describe('DeviceController', function() {
 
   describe('#create()', function(done) {
 
-    it('responds 200 OK when valid device details are received', function(done) {
+    it('responds 201 Created when valid device details are received', function(done) {
       request(sails.hooks.http.app)
         .post('/device/create')
         .send({ name: 'MyTestDevice' })
         .expect('Content-Type', /json/)
-        .expect(200)
+        .expect(201)
         .end(function(err, res) {
           if (err) return done(err);
           done();
         });
     });
     
-    it('responds 400 Bad Request when invalid device details are received', function(done) {
+    it('responds 422 Unprocessable Entity when invalid device details are received', function(done) {
       request(sails.hooks.http.app)
         .post('/device/create')
         .send({ invalid: 'invalid'})
-        .expect(400)
+        .expect(422)
         .end(function(err, res) {
           if (err) return done(err);
           done();

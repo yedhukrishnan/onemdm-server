@@ -78,11 +78,12 @@ module.exports = {
     Script.update({id: req.params.id}, req.body)
       .exec(function(err, scripts) {
         if(err) {
+          res.status(422);
           return res.json(err);
         }
         
         Script.publishUpdate(scripts[0].id + '', { status: scripts[0].status, output: scripts[0].output });
-        
+
         return res.json({
           script: scripts[0]
         });

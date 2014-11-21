@@ -5,7 +5,7 @@ describe('ScriptController', function() {
   
   describe('#create()', function() {
     
-    it('responds 200 OK when a script is created', function(done) {
+    it('redirects to script index page when a script is created', function(done) {
       request(sails.hooks.http.app)
         .post('/script/create')
         .send({ device: 1 })
