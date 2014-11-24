@@ -1,5 +1,7 @@
 var request = require('supertest');
 var assert = require('assert');
+var sinon = require('sinon');
+var expect = require('chai').expect;
 
 describe('ScriptController', function() {
   
@@ -20,7 +22,8 @@ describe('ScriptController', function() {
   
   describe('#update()', function(done) {
 
-    it('updates the script values', function(done) {
+    it('updates the script values and publishes a message when done', function(done) {
+      var publishUpdateStub = sinon.stub(Script, 'publishUpdate');
       request(sails.hooks.http.app)
         .post('/script/1')
         .send({ status: 'changed' })
@@ -28,6 +31,7 @@ describe('ScriptController', function() {
           Script.findOne(1).then(function(s) {
             assert.equal(s.status, 'changed');
           });
+          expect(publishUpdateStub.called).to.be.true;
           if(err) return done(err);
           done();
         });

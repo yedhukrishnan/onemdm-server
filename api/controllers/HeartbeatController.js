@@ -19,14 +19,14 @@ module.exports = {
           return res.send('Invalid heartbeat data');
         }        
         
-        Heartbeat.findOne(heartbeat.id).populate('device').then(function(newHeartbeat) {
-          Heartbeat.publishCreate(newHeartbeat.device);
-        });
-
-        res.status(201);
-        return res.json({
-          device: heartbeat.device
-        });
+        Heartbeat.findOne(heartbeat.id).populate('device')
+          .then(function(newHeartbeat) {
+            Heartbeat.publishCreate(newHeartbeat.device);
+            res.status(201);
+            return res.json({
+              device: heartbeat.device
+            });
+          });
       });
   }
 

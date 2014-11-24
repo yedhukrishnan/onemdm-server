@@ -36,11 +36,9 @@ describe('HeartbeatController', function() {
         .post('/heartbeat/create')
         .send({ device: 1 })
         .end(function(err, res) {
-          setTimeout(function() {
-            expect(publishCreateStub.callCount).to.equal(1);
+            expect(publishCreateStub.called).to.be.true;
             publishCreateStub.restore();
             done(); 
-          }, 1000);
         });
     });
     
