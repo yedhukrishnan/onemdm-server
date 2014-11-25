@@ -24,10 +24,12 @@ Once the application is installed in the android device, it gets registered in t
 
 One MDM server can be used to do the following:
 
-* **Check the Device Disk Space**: One MDM server can be used to check the free disk space available in the device. Once you click on the `Check Disk Space` button, the server creates a script with command to execute on that device. Once the script is delivered to the device, the device executes the script and sends the status (success or failure) and result back to the server (See the screenshots below).
+* **Check the device disk space**: One MDM server can be used to check the free disk space available in the device. Once you click on the `Check Disk Space` button, the server creates a script with command to execute on that device. Once the script is delivered to the device, the device executes the script and sends the status (success or failure) and result back to the server (See the screenshots below).
 
 ![scripts](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_scripts.png)
 ![output](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_output.png)
+
+* **Execute arbitrary shell scripts on the device**: You can execute shell scripts on your device through One MDM. Once you click on `Run Script` button on the Devices page, you'll be taken to a new page where you can create a script to run on the device. If the device is rooted, you can also run commands which requires superuser permission by checking `Requires superuser permission`. Note that you may have to authorize your application for running superuser commands.
 
 ## How to contribute to One MDM?
 
