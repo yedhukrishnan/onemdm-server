@@ -17,7 +17,7 @@
       },
       "placeholders": {
         "script-name": "Enter script name",
-        "script-content": "Enter the command to be executed"
+        "script-content": "Enter the commands to be executed"
       },
       "submit-button": "Execute",
       "required-field": "required field",
