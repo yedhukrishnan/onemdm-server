@@ -13,6 +13,11 @@
       <label for="content" class="control-label"><%= __("scripts")["new"]["labels"]["script-content"]  %></label>
       <textarea type="text" rows="5" class="form-control" id="content" name="content" placeholder="<%= __("scripts")["new"]["placeholders"]["script-content"] %>" required></textarea>
     </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="rootPermission" name="rootPermission" value="true"> <%= __("scripts")["new"]["labels"]["root-permission"] %>
+      </label>
+    </div>
     <div class="form-group">
       <button type="submit" class="btn btn-default"><%= __("scripts")["new"]["submit-button"] %></button>
       <a href="/device?page=<%= page %>" class="btn btn-default btn-cancel">Cancel</a>
@@ -25,7 +30,6 @@
     <p>Note:</p>
     <p><%= __("scripts")["new"]["help-text-title"] %></p>
     <ul>
-      <li><%- __("scripts")["new"]["help-text-no-root-commands"] %></li>
       <li><%- __("scripts")["new"]["help-text-no-indefinite-commands"] %></li>
     </ul>
   </div>

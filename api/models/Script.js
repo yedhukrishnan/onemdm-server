@@ -26,6 +26,10 @@ module.exports = {
     },
     output: {
       type: 'text'      
+    },
+    rootPermission: {
+      type: 'boolean',
+      defaultsTo: false
     }
   }
 

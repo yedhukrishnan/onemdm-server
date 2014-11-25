@@ -13,7 +13,8 @@
       "page-title": "Run Script",
       "labels": {
         "script-name": "Script Name",
-        "script-content": "Shell Command"
+        "script-content": "Shell Command",
+        "root-permission": "Requires superuser permission (for rooted devices only)"
       },
       "placeholders": {
         "script-name": "Enter script name",
@@ -22,7 +23,6 @@
       "submit-button": "Execute",
       "required-field": "required field",
       "help-text-title": "The following shell commands are not supported:",
-      "help-text-no-root-commands": "The shell commands which require root permission.",
       "help-text-no-indefinite-commands": "The shell commands which run indefinitely. (Example: Instead of <i>logcat</i> execute <i>logcat -d</i>)"
       
     },

@@ -9,7 +9,9 @@ var extend = require('util')._extend;
 module.exports = {
   
   create: function(req, res) {
-    Script.create(req.body)
+    var scriptData = req.body;
+    scriptData.rootPermission = scriptData.rootPermission == 'true';
+    Script.create(scriptData)
       .exec(function(error, script) {
         req.flash('message', req.__("scripts")["execution-initiated"]);
         res.redirect("/script");

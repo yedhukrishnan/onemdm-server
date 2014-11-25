@@ -10,6 +10,7 @@ describe('ScriptModel', function() {
         assert.equal(script.name, 'Disk Check');
         assert.equal(script.content, 'df');
         assert.equal(script.status, 'Pending');
+        assert.equal(script.rootPermission, false);
         done();
       });
     });
