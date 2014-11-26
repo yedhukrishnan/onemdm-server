@@ -29,7 +29,7 @@ One MDM server can be used to do the following:
 ![scripts](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_scripts.png)
 ![output](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_output.png)
 
-* **Execute arbitrary shell scripts on the device**: You can execute shell scripts on your device through One MDM. Once you click on `Run Script` button on the Devices page, you'll be taken to a new page where you can create a script to run on the device. If the device is rooted, you can also run commands which requires superuser permission by checking `Requires superuser permission`. Note that you may have to authorize your application for running superuser commands.
+* **Execute arbitrary shell scripts on the device**: You can execute shell scripts on your device through One MDM. Once you click on `Run Script` button on the Devices page, you'll be taken to a new page where you can create a script to run on the device. If the device is rooted, you can also run commands which requires superuser permission by checking `Requires superuser permission`. Note that you may have to authorize your application for running superuser commands. Read more here: [Script Execution](https://github.com/multunus/one-mdm/wiki/Script-Execution)
 
 ## How to contribute to One MDM?
 
