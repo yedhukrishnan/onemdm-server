@@ -1,0 +1,26 @@
+<div class="login">
+
+  <div class="login-error center-align">
+    <% if (errors) {%>
+      <% errors.forEach(function (error) { %>
+        <%= __(error) %>
+      <% }) %>
+    <% } %>
+  </div>
+
+  <form role="form" action="/auth/local/register" method="post">
+    <div class="form-group required">
+      <input type="text" name="username" class="form-control" placeholder="Username">
+    </div>
+    <div class="form-group required">
+      <input type="text" name="email" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group required">
+      <input type="password" name="password" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group required">
+      <button type="submit" class="btn btn-default center-align">Sign up</button>
+    </div>
+  </form>
+
+</div>
