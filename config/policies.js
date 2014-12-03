@@ -21,10 +21,23 @@ module.exports.policies = {
 
   '*': ['passport', 'sessionAuth'],
 
-  'auth': {
+  'AuthController': {
     '*': ['passport']
-  }
+  },
 
+  'DeviceController': {
+    'create': ['passport', 'bearerAuth']
+  },
+
+  'HeartbeatController': {
+    'create': ['passport', 'bearerAuth']
+  },
+
+  'ScriptController': {
+    'executable': ['passport', 'bearerAuth'],
+    'update': ['passport', 'bearerAuth']
+  }
+  
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *
