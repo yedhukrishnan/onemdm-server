@@ -1,0 +1,28 @@
+<div class="page-heading">
+  <h2><%= __("auth")["settings"]["page-title"] %></h2>      
+</div>  
+
+<% if(user) { %>
+
+  <table class="table table-hover settings-data">
+    <tbody>
+      <tr>
+        <td><%= __("auth")["settings"]["labels"]["username"] %><td>
+        <td><%= user.username %><td>
+      </tr>
+      <tr>
+        <td><%= __("auth")["settings"]["labels"]["email"] %><td>
+        <td><%= user.email %><td>
+      </tr>
+      <tr>
+        <td><%= __("auth")["settings"]["labels"]["access-token"] %><td>
+        <td><%= user.token %><td>
+      </tr>
+    <tbody>
+  </table>
+
+<% } else { %>
+
+  <p class="not-available">Not available</p>
+
+<% } %>

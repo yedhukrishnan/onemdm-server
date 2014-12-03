@@ -44,6 +44,17 @@
     },
     "execution-initiated": "Script execution initiated"
   },
+  "auth": {
+    "settings": {
+      "page-title": "Settings",
+      "labels": {
+        "username": "Username",
+        "email": "E-mail",
+        "access-token": "Access Token"
+      }
+    } 
+  },
+  
   "Error.Passport.Password.Invalid": "The provided password is invalid!",
   "Error.Passport.Password.Wrong": "Whoa, that password wasn't quite right!",
   "Error.Passport.Password.NotSet": "Oh no, you haven't set a password yet!",

@@ -22,7 +22,8 @@ module.exports.policies = {
   '*': ['passport', 'sessionAuth'],
 
   'AuthController': {
-    '*': ['passport']
+    '*': ['passport'],
+    'settings': ['passport', 'sessionAuth']
   },
 
   'DeviceController': {
