@@ -9,8 +9,13 @@
  */
 module.exports = function(req, res, next) {
 
+  var body = req.body;
   if (req.user) {
     return next();
+  } else if (body) {
+    if (body.access_token) {
+      return passport.authenticate('bearer', { session: false })(req, res, next);
+    }
   }
 
   return res.redirect('auth/login');
