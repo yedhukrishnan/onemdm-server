@@ -13,8 +13,16 @@ before(function(done) {
   }, function(err, sails) {
    
     if (err) return done(err);
-    done(err, sails);
-  
+
+    // Create a user for login sessions
+    User.create({ username: 'tester', email: 'tester@gmail.com' })
+      .exec(function(err, user) {
+        Passport.create({ protocol: 'local', user: user.id, password: 'password', accessToken: 'testtoken' })
+          .exec(function(err, passport) {
+            done(err, sails);//done();
+          });
+      });
+    
   });
   
 });

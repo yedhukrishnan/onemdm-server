@@ -10,6 +10,7 @@ describe('HeartbeatController', function() {
     it('responds 201 Created with device ID when a heartbeat is received', function(done) {
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
+        .set("Authorization", "Bearer testtoken")
         .send({ device: 1 })
         .expect(201)
         .end(function(err, res) {
@@ -22,6 +23,7 @@ describe('HeartbeatController', function() {
     it('responds 422 Unprocessable Entity when an invalid heartbeat is received', function(done) {
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
+        .set("Authorization", "Bearer testtoken")
         .send({ invalid: 'invalid' })
         .expect(422)
         .end(function(err, res) {
@@ -34,6 +36,7 @@ describe('HeartbeatController', function() {
       var publishCreateStub = sinon.stub(Heartbeat, 'publishCreate');
       request(sails.hooks.http.app)
         .post('/heartbeat/create')
+        .set("Authorization", "Bearer testtoken")
         .send({ device: 1 })
         .end(function(err, res) {
             expect(publishCreateStub.called).to.be.true;

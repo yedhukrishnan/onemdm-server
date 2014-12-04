@@ -7,6 +7,7 @@ describe('DeviceController', function() {
     it('responds 201 Created when valid device details are received', function(done) {
       request(sails.hooks.http.app)
         .post('/device/create')
+        .set("Authorization", "Bearer testtoken")
         .send({ name: 'MyTestDevice' })
         .expect('Content-Type', /json/)
         .expect(201)
@@ -19,26 +20,13 @@ describe('DeviceController', function() {
     it('responds 422 Unprocessable Entity when invalid device details are received', function(done) {
       request(sails.hooks.http.app)
         .post('/device/create')
+        .set("Authorization", "Bearer testtoken")
         .send({ invalid: 'invalid'})
         .expect(422)
         .end(function(err, res) {
           if (err) return done(err);
           done();
         });
-    });
-
-  });
-
-  describe('#index()', function(done) {
-    
-    it('lists down all the devices', function(done) {
-      request(sails.hooks.http.app)
-        .get('/device/index')
-        .expect(200)
-        .expect('Content-Type', /html/)
-        .end(function(err, res) {
-          done();
-        })
     });
 
   });
