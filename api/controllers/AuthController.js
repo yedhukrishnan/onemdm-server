@@ -183,11 +183,9 @@ var AuthController = {
     console.log(req.user);
     Passport.findOne({user: req.user.id, protocol: 'local'})
       .then(function(passport) {
-        console.log(passport.accessToken);
         var userData = { username: req.user.username, email: req.user.email, token: passport.accessToken };
         res.view('auth/settings', { user: userData });
       });
-    res.view({});
   }
 };
 

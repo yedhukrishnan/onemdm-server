@@ -36,5 +36,4 @@ module.exports.routes = {
   'GET /auth/:provider': 'AuthController.provider',
   'GET /auth/:provider/callback': 'AuthController.callback',
   'GET /auth/:provider/:action': 'AuthController.callback'
-
 };
