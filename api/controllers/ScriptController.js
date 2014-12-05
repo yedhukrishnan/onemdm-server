@@ -37,7 +37,7 @@ module.exports = {
             currentPage: currentPage,
             layout: 'layout'
           }, buttonClasses);
-          res.view('script/index', data);           
+          res.view(data);           
 
         });
       });
@@ -47,7 +47,7 @@ module.exports = {
     Script.findOne(req.query.id)
       .populate('device')
       .then(function(script) {
-        res.view('script/show', {script: script});
+        res.view({ script: script });
       });
   },
 

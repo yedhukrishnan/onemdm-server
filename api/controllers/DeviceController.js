@@ -37,7 +37,7 @@ module.exports = {
             currentPage: currentPage,
             layout: 'layout'
           }, buttonClasses);
-          res.view('device/index', data);           
+          res.view(data);           
         });
       });
   }
