@@ -79,7 +79,7 @@ var updateScriptStatusStyles = function() {
 };
 
 var bindSuperUserConfirmation = function() {
-  var helpText = "Some SU commands may damage your tablet (like removing all your data). Do you want to continue using superuser permission?";
+  var helpText = "Some SU commands may cause damage to your tablet (like removing all your data). Do you want to continue using superuser permission?";
   $('#rootPermission').change(function() {
     if($(this).prop('checked')) {
       if(!confirm(helpText)) {
