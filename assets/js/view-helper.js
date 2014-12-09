@@ -4,6 +4,7 @@ $(document).ready(function() {
   subscribeToHeartbeatCreation();
   subscribeToScriptStatusUpdation();
   updateScriptStatusStyles();
+  bindSuperUserConfirmation();
   
 });
 
@@ -74,5 +75,16 @@ var updateScriptStatusStyles = function() {
   $.each($(".script-list tr td.script-status"), function(index, element) {
     var status = $(element).html();
     $(element).html(scriptStatus(status));
+  });
+};
+
+var bindSuperUserConfirmation = function() {
+  var helpText = "Some SU commands may damage your tablet (like removing all your data). Do you want to continue using superuser permission?";
+  $('#rootPermission').change(function() {
+    if($(this).prop('checked')) {
+      if(!confirm(helpText)) {
+        $(this).prop('checked', false);
+      }
+    };
   });
 };
