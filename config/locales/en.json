@@ -29,7 +29,8 @@
     "index": {
       "page-title": "Scripts",
       "column-titles": "Script ID, Script Name, Device Name, Status, Created On, Actions",
-      "not-available": "No scripts found"
+      "not-available": "No scripts found",
+      "rerun-confirm": "You are about to rerun the script. Do you want to continue?"
     },
     "show": {
       "page-title": "Script Details",
