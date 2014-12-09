@@ -23,6 +23,10 @@
       <td class="script-status"><%= script.status %><td>
     </tr>
     <tr>
+      <td><%= __("scripts")["show"]["labels"]["script-content"] %><td>
+      <td><pre class="code"><%= script.content %></pre><td>
+    </tr>
+    <tr>
       <td><%= __("scripts")["show"]["labels"]["output"] %><td>
       <td class="script-output">
         <% if(script.output) { %>

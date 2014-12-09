@@ -38,6 +38,7 @@
         "device-name": "Device Name",
         "script-name": "Script Name",
         "script-id": "Script ID",
+        "script-content": "Script Content",
         "status": "Status",
         "output": "Output"
       },
