@@ -56,6 +56,8 @@
       }
     } 
   },
+
+  "auth.login.register-new-account": "Register a new account",
   
   "Error.Passport.Password.Invalid": "The provided password is invalid!",
   "Error.Passport.Password.Wrong": "Whoa, that password wasn't quite right!",

@@ -1,4 +1,3 @@
-<div class="login">
   <div class="login-error center-align">
     <% if (errors) {%>
       <% errors.forEach(function (error) { %>
@@ -15,13 +14,10 @@
       <input type="password" name="password" class="form-control" placeholder="Password">
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-default center-align">Sign in</button>
-    <div
+      <button type="submit" class="btn btn-info btn-action center-align">Sign in</button>
+    <div>
   </form>
 
   <div class="sign-up-message">
-    <p>Don't have an account? <a href="/register">Sign up</a></p>
+    <p><a href="/register"><%= __("auth.login.register-new-account") %></a></p>
   </div>
-
-</div>
-

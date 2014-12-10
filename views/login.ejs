@@ -4,15 +4,21 @@
     <title><%= __("app-title") %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/styles/importer.css">
-
   </head>
 
-  <body>
+  <body class="login-page">
 
-    <%- partial('header') %>
-    
-    <%- body %>
+    <div class="login">
+
+      <div class="header">
+        <p class="header-text"><%= __("app-title") %></p>
+      </div>
+
+      <%- body %>
+
+    </div>
 
     <script src="/js/jquery-1.11.0.min.js"></script>
 
