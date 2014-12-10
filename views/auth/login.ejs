@@ -1,10 +1,11 @@
-  <div class="login-error center-align">
-    <% if (errors) {%>
+  <% if(errors) {%>
+    <div class="login-error center-align">
       <% errors.forEach(function (error) { %>
         <%= __(error) %>
       <% }) %>
-    <% } %>
-  </div>
+    </div>
+  <% } %>
+
 
   <form role="form" action="/auth/local" method="post">
     <div class="form-group required">
