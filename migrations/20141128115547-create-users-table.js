@@ -4,8 +4,14 @@ var type = dbm.dataType;
 exports.up = function(db, callback) {
   db.createTable('users', {
     id: { type: 'int', primaryKey: true, autoIncrement: true },
-    username: 'text',
-    email: 'text',
+    username: {
+      type: 'text',
+      unique: true
+    },
+    email: {
+      type: 'text',
+      unique: true
+    },
     createdAt: 'timestamptz',
     updatedAt: 'timestamptz'
   }, callback);
