@@ -26,7 +26,7 @@ Once the application is installed in the android device, it gets registered in t
 
 One MDM server can be used to do the following:
 
-* **Check the device disk space**: One MDM server can be used to check the free disk space available in the device. Once you click on the `Check Disk Space` button, the server creates a script with command to execute on that device. Once the script is delivered to the device, the device executes the script and sends the status (success or failure) and result back to the server (See the screenshots below).
+* **Check the device disk space**: One MDM server can be used to check the free/used disk space in the device. Once you click on the `Check Disk Space` button, the server creates a script with command to execute on that device. Once the script is delivered to the device, the device executes the script and sends the status (success or failure) and result back to the server (See the screenshots below).
 
 ![scripts](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_scripts.png)
 ![output](https://raw.githubusercontent.com/multunus/one-mdm/master/screenshots/onemdm_output.png)
