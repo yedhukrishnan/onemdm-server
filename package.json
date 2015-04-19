@@ -2,7 +2,7 @@
   "name": "one-mdm",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Open source Mobile Device Management (MDM) solution",
   "keywords": [],
   "dependencies": {
     "bcryptjs": "^2.1.0",
