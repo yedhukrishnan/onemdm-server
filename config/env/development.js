@@ -18,11 +18,11 @@ module.exports = {
    ***************************************************************************/
 
   models: {
-     connection: 'postgresServerDevFlash'
+     connection: 'postgresDev'
   },
 
   migrations: {
-     connection: 'postgresServerDevFlash'
+     connection: 'postgresDev'
   }
 
 };
