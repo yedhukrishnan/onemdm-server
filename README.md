@@ -2,6 +2,8 @@
 
 # One MDM
 
+> :warning: This project is no longer maintained. Check out the upcoming improved version of OneMDM project here: [OneMDM Server](https://github.com/multunus/onemdm-server) 
+
 ## What is One MDM?
 
 One MDM is an open source Mobile Device Management (MDM) solution. It can be used to manage Android devices registered to the server after installing the [one-mdm-client](https://github.com/multunus/one-mdm-client) application. 
